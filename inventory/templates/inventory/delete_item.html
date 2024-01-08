@@ -1,0 +1,14 @@
+{% extends "inventory/base.html" %}
+{% block main-content %}
+<div class="mt-5">
+    <a href="{% url "dashboard" %}" class="btn btn-outline-primary"> Return Dashboard</a>
+    <div class="row">
+        <form method="post" class="col-sm-11 col-md-4 mt-3 mx-auto">
+            {% csrf_token %}
+            <h3 class="fw-light">Are you sure you want to delete {{item.name}}?</h3>
+            <p class="fw-bold">This can't be undone!</p>
+            <button type="submit" class="btn btn-danger w-100 mt-2">Delete</button>
+        </form>
+    </div>
+</div>
+{% endblock main-content %}
